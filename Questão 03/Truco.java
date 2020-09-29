@@ -15,7 +15,28 @@ Para sua referência, segue o método `jogar()`,
 que implementa a lógica básica do início do jogo:
 */
 public class Truco {
+public Truco() {
+        cartaVirada = new Carta("Paus", "Às");
+        jogador1 = new Jogador();
+        jogador2 = new Jogador();
+        baralho = new Baralho();
+    }
 
+    private void embaralharCartas() {
+        baralho.embaralhar();
+    }
+
+    private void distribuirMaos() throws Exception {
+        int i;
+        for( i = 0; i < 3; i++) {
+            jogador1.recebeCarta(baralho.distribuir());
+            jogador2.recebeCarta(baralho.distribuir());
+        }
+    }
+
+    private void inicializaManilha() throws Exception {
+        cartaVirada = baralho.distribuir();
+    }
     private void imprimeMesa() {
         System.out.println("Apenas um placeholder para a impressão de mesa.");
         System.out.println("Você não precisa implementar esse método.");

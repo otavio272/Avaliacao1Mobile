@@ -1,9 +1,17 @@
-/*
-Implemente uma classe `QuadradoRedimensionavel`, que é _subclasse_ de 
-`Quadrado` e implementa a interface `Redimensionavel`. 
-Essa classe deve _implementar_  um construtor que recebe o valor de 
-`lado` e o transmite para o construtor da __superclasse__.
-*/
-public class QuadradoRedimensionavel {
-    
+package com.Quadrado;
+
+public class QuadradoRedimensionavel extends Quadrado implements Redimensionavel{
+
+
+    public QuadradoRedimensionavel(double lado) {
+        super(lado);
+    }
+
+    public void redimensionar(int percentual) {
+        this.lado *= percentual;
+    }
+
 }
+
+//@Override mostra que o método declarado está sobrescrevendo um método de mesma assinatura declarado na superclasse ou na interface 
+   que está sendo herdada/implementada pela sua classe.
